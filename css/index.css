@@ -232,3 +232,208 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* banner */
+.banner {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner-left {
+  display: flex;
+  align-items: center;
+  width: 770px;
+  height: 100%;
+}
+.banner-left-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 100%;
+}
+.banner-left-btn-up {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  background-color: #d2e1e9;
+}
+.banner-left-btn-up.active {
+  background-color: #0158a8;
+  color: white;
+}
+.banner-left-btn-up.active::after {
+  content: " ";
+  position: absolute;
+  z-index: 10;
+  left: 99%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 0 25px 32px;
+  border-color: transparent transparent transparent #0158a8;
+  margin-top: -25px;
+}
+.banner-left-btn-up-img {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.banner-left-btn-up-img > div {
+  width: 100%;
+  height: 100%;
+  background: url("../images/icons.png") no-repeat 0 0;
+}
+.banner-left-btn-up-txt {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.banner-left-btn-down {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  background-color: #d2e1e9;
+}
+.banner-left-btn-down.active {
+  background-color: #0158a8;
+  color: white;
+}
+.banner-left-btn-down.active::after {
+  content: " ";
+  position: absolute;
+  z-index: 10;
+  left: 99%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 0 25px 32px;
+  border-color: transparent transparent transparent #0158a8;
+  margin-top: -25px;
+}
+.banner-left-btn-down-img {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.banner-left-btn-down-img > div {
+  width: 100%;
+  height: 100%;
+  background: url("../images/icons.png") no-repeat -48px 0;
+}
+.banner-left-btn-down-txt {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+/* swiper */
+.banner-left-slide {
+  position: relative;
+  width: 690px;
+  height: 350px;
+}
+.swiper {
+  width: 690px;
+  height: 350px;
+}
+.swiper-slide {
+  width: 690px;
+  height: 350px;
+  background-color: yellow;
+  position: relative;
+}
+.swiper-slide > img {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide > .slide-txt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  color: white;
+  overflow: hidden;
+  padding-left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+}
+.swiper-control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 40px;
+  color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.swiper-control-page {
+  width: 36px;
+  font-size: 14px;
+  border-right: 1px solid #fff;
+}
+
+.swiper-control-pre {
+  width: 20px;
+  height: 20px;
+  background: url("../images/common2.png") no-repeat -242px -282px;
+}
+.swiper-control-play {
+  width: 20px;
+  height: 20px;
+  background: url("../images/common2.png") no-repeat;
+  background-position: -282px -282px;
+}
+.swiper-control-play.active {
+  background-position: -269px -282px;
+}
+.swiper-control-next {
+  width: 20px;
+  height: 20px;
+  background: url("../images/common2.png") no-repeat -255px -282px;
+}
+
+/* ----------------- */
+.banner-right {
+  width: 360px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: yellow;
+}
+.banner-right-top {
+  width: 100%;
+  height: 36px;
+  background-color: blue;
+}
+.banner-right-mid {
+  width: 100%;
+  height: 200px;
+  background-color: violet;
+}
+.banner-right-bot {
+  width: 100%;
+  height: 90px;
+  background-color: turquoise;
+}
