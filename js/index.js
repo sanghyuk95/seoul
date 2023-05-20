@@ -1,3 +1,5 @@
+
+// ad컨트롤
 const $ad = document.querySelector(".ad");
 const $colseBtn = document.querySelector(".close-btn");
 const $wrap = document.querySelector(".wrap");
@@ -11,7 +13,8 @@ $colseBtn.addEventListener("click", (e) => {
   }, 500);
 });
 
-const swiper = new Swiper(".swiper", {
+// 배너스와이퍼
+const swiper = new Swiper(".mySwiper", {
   direcyion: "horizontal",
   loop: true,
   autoplay: {
@@ -27,6 +30,7 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
+// 배너스와이퍼 컨트롤
 const $slidePlay = document.querySelector(".swiper-control-play");
 
 $slidePlay.addEventListener("click", () => {
@@ -44,4 +48,33 @@ const $bannerBtnDown = document.querySelector(".banner-left-btn-down");
 swiper.on("slideChange", () => {
   $bannerBtnUp.classList.toggle("active", swiper.realIndex < 3);
   $bannerBtnDown.classList.toggle("active", swiper.realIndex > 2);
+});
+
+// 이밴트 스와이퍼
+const eventSwiper = new Swiper(".mySwiper2", {
+  loop: true,
+  direcyion: "horizontal",
+  autoplay: {
+    delay: 5000,
+  },
+  pagination: {
+    el: ".event-control-page",
+    type: "fraction",
+  },
+  navigation: {
+    prevEl: ".event-control-pre",
+    nextEl: ".event-control-next",
+  },
+});
+
+// 이벤트 스와이퍼 컨트롤
+const $eventPlay = document.querySelector(".event-control-play");
+
+$eventPlay.addEventListener("click", () => {
+  $eventPlay.classList.toggle("active");
+  if ($eventPlay.classList.contains("active")) {
+    eventSwiper.autoplay.pause();
+  } else {
+    eventSwiper.autoplay.resume();
+  }
 });
