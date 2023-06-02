@@ -1,4 +1,3 @@
-
 // ad컨트롤
 const $ad = document.querySelector(".ad");
 const $colseBtn = document.querySelector(".close-btn");
@@ -49,6 +48,17 @@ swiper.on("slideChange", () => {
   $bannerBtnUp.classList.toggle("active", swiper.realIndex < 3);
   $bannerBtnDown.classList.toggle("active", swiper.realIndex > 2);
 });
+
+// 코로나 확진자수 api
+const $corona = document.querySelector(".corona");
+fetch(
+  "https://api.corona-19.kr/korea/?serviceKey=kszC1q9X3u6exJ48ycdDPvF7LIYl2fQjE"
+)
+  .then((res) => res.json())
+  .then((data) => {
+    let count = data.seoul.incDec;
+    $corona.textContent = count.toLocaleString("ko-KR");
+  });
 
 // 이밴트 스와이퍼
 const eventSwiper = new Swiper(".mySwiper2", {
