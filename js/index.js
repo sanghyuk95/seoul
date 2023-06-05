@@ -51,6 +51,7 @@ swiper.on("slideChange", () => {
 
 // 코로나 확진자수 api
 const $corona = document.querySelector(".corona");
+const $coronaTime = document.querySelector(".banner-right-top-time");
 fetch(
   "https://api.corona-19.kr/korea/?serviceKey=kszC1q9X3u6exJ48ycdDPvF7LIYl2fQjE"
 )
@@ -58,6 +59,8 @@ fetch(
   .then((data) => {
     let count = data.seoul.incDec;
     $corona.textContent = count.toLocaleString("ko-KR");
+    let time = data.API.updateTime.slice(14).replace(")", "");
+    $coronaTime.textContent = time
   });
 
 // 롤링배너
@@ -96,7 +99,7 @@ $noticeMenu.forEach((item, idx) => {
     });
     $moticeBox.forEach((a, i) => {
       a.classList.toggle("active", i !== idx);
-    })
+    });
   });
 });
 
@@ -104,6 +107,20 @@ $noticeMenu.forEach((item, idx) => {
 const eventSwiper = new Swiper(".mySwiper2", {
   loop: true,
   direcyion: "horizontal",
+  autoplay: {
+    delay: 3000,
+  },
+  slidesPerView: 1,
+  breakpoints: {
+    710: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+  },
   autoplay: {
     delay: 5000,
   },
