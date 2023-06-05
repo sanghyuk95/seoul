@@ -67,7 +67,6 @@ if (window.innerWidth < 1024) {
     const clone = parentSelector.innerHTML;
     const firstElement = parentSelector.children[0];
     let i = 0;
-    console.log(firstElement);
     parentSelector.insertAdjacentHTML("beforeend", clone);
     parentSelector.insertAdjacentHTML("beforeend", clone);
     parentSelector.insertAdjacentHTML("beforeend", clone);
@@ -80,12 +79,26 @@ if (window.innerWidth < 1024) {
       i = i + speed;
     }, 0);
   }
+  //after window is completed load
+  //1 class selector for marquee
+  //2 marquee speed 0.2
+  window.addEventListener("load", Marquee(".part-list", 0.2));
 }
 
-//after window is completed load
-//1 class selector for marquee
-//2 marquee speed 0.2
-window.addEventListener("load", Marquee(".part-list", 0.2));
+// 이벤트,이달의행사,서비스메뉴
+const $noticeMenu = document.querySelectorAll(".notice-menu-title");
+const $moticeBox = document.querySelectorAll(".notice-box");
+
+$noticeMenu.forEach((item, idx) => {
+  item.addEventListener("click", () => {
+    $noticeMenu.forEach((a, i) => {
+      a.classList.toggle("active", i === idx);
+    });
+    $moticeBox.forEach((a, i) => {
+      a.classList.toggle("active", i !== idx);
+    })
+  });
+});
 
 // 이밴트 스와이퍼
 const eventSwiper = new Swiper(".mySwiper2", {
