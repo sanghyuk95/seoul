@@ -1463,6 +1463,9 @@ body {
   .seoul-main-right {
     width: 100%;
   }
+  .seoul-sns {
+    display: none;
+  }
 }
 /* event */
 .event {
@@ -1738,7 +1741,20 @@ body {
     width: 100%;
   }
   .footer-up {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
-  
+  .footer-up-list {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .footer-up-list li:not(:first-child) {
+    border: none;
+  }
+  .footer-down,.footer-down-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-down-left-img {
+    display: none;
+  }
 }
